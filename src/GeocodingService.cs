@@ -13,15 +13,10 @@ namespace Epinova.GoogleGeocoding
 {
     internal class GeocodingService : RestServiceBase, IGeocodingService
     {
-        internal static HttpClient Client;
+        internal static HttpClient Client = new HttpClient { BaseAddress = new Uri("https://maps.googleapis.com/maps/api/geocode/json") };
         private readonly ILogger _log;
         private readonly IMapper _mapper;
 
-
-        static GeocodingService()
-        {
-            Client = new HttpClient { BaseAddress = new Uri("https://maps.googleapis.com/maps/api/geocode/json") };
-        }
 
         public GeocodingService(ILogger log, IMapper mapper) : base(log)
         {
