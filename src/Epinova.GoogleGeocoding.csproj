@@ -115,6 +115,7 @@
     <Compile Include="ResponseDtoBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Epinova.GoogleGeocoding.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
