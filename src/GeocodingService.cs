@@ -26,17 +26,17 @@ namespace Epinova.GoogleGeocoding
 
         public override string ServiceName => nameof(GeocodingService);
 
-        public async Task<GeocodingInfo> GetGeocodingInfoAsync(string apiKey, string postalCode, string country)
+        public async Task<GeocodingInfo> GetGeocodingInfoAsync(string apiKey, string postalCode, string country, string region)
         {
-            return await GetGeocodingInfoAsync(apiKey, String.Join(", ", postalCode, country)).ConfigureAwait(false);
+            return await GetGeocodingInfoAsync(apiKey, String.Join(", ", postalCode, country), region).ConfigureAwait(false);
         }
 
-        public async Task<GeocodingInfo> GetGeocodingInfoAsync(string apiKey, string address)
+        public async Task<GeocodingInfo> GetGeocodingInfoAsync(string apiKey, string address, string region)
         {
             var parameters = new SortedDictionary<string, string>
             {
                 { "address", address },
-                { "region", "no"},
+                { "region", region},
                 { "key", apiKey },
             };
             string url = $"?{BuildQueryString(parameters)}";
