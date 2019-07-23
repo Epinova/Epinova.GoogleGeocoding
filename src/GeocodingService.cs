@@ -11,7 +11,7 @@ using EPiServer.Logging;
 
 namespace Epinova.GoogleGeocoding
 {
-    internal class GeocodingService : RestServiceBase, IGeocodingService
+    public class GeocodingService : RestServiceBase, IGeocodingService
     {
         internal static HttpClient Client = new HttpClient { BaseAddress = new Uri("https://maps.googleapis.com/maps/api/geocode/json") };
         private readonly ILogger _log;
