@@ -100,7 +100,7 @@ namespace Epinova.GoogleGeocodingTests
         {
             _messageHandler.SendAsyncReturns(new HttpResponseMessage(HttpStatusCode.OK)
             {
-                Content = new StringContent("{ 'Some': 'random', 'unparasable': 'json' }")
+                Content = new StringContent("{ 'Some': 'random', 'un-parseable': 'json' }")
             });
             GeocodingInfo result = await _service.GetGeocodingInfoAsync(Factory.GetString(), Factory.GetString(), "no");
 
