@@ -3,15 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epinova.GoogleGeocoding", "src\Epinova.GoogleGeocoding.csproj", "{2FB97261-D97E-4852-BACB-80492A0B0CC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epinova.GoogleGeocoding", "src\Epinova.GoogleGeocoding.csproj", "{2FB97261-D97E-4852-BACB-80492A0B0CC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epinova.GoogleGeocodingTests", "tests\Epinova.GoogleGeocodingTests.csproj", "{49EC9A58-3050-44B2-AA49-268B0252D7F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epinova.GoogleGeocodingTests", "tests\Epinova.GoogleGeocodingTests.csproj", "{49EC9A58-3050-44B2-AA49-268B0252D7F2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{8FB9D404-9D1C-452D-919F-07224219D082}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		appveyor.yml = appveyor.yml
 		LICENSE = LICENSE
+		nuget.config = nuget.config
 		README.md = README.md
 	EndProjectSection
 EndProject
