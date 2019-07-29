@@ -54,9 +54,10 @@ The module is published on nuget.org.
 nuget install Epinova.GoogleGeocoding
 ```
 
-## Built With
+## Target framework
 
-* .Net Framework 4.6.2
+* .NET Standard 2.0
+* Tests target .NET Core 2.1
 
 ## Authors
 

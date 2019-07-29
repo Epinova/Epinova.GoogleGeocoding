@@ -24,8 +24,6 @@ namespace Epinova.GoogleGeocoding
             _mapper = mapper;
         }
 
-        public override string ServiceName => nameof(GeocodingService);
-
         public async Task<GeocodingInfo> GetGeocodingInfoAsync(string apiKey, string postalCode, string country, string region)
         {
             return await GetGeocodingInfoAsync(apiKey, String.Join(", ", postalCode, country), region).ConfigureAwait(false);
@@ -41,14 +39,14 @@ namespace Epinova.GoogleGeocoding
             };
             string url = $"?{BuildQueryString(parameters)}";
 
-            HttpResponseMessage responseMessage = await Call(() => Client.GetAsync(url), true).ConfigureAwait(false);
+            HttpResponseMessage responseMessage = await CallAsync(() => Client.GetAsync(url), true).ConfigureAwait(false);
             if (responseMessage?.StatusCode != HttpStatusCode.OK)
             {
                 _log.Error($"Geocoding query failed. Service response was NULL or status code not OK for address {address}.");
                 return null;
             }
 
-            GeocodingRootDto resultDto = await ParseJson<GeocodingRootDto>(responseMessage).ConfigureAwait(false);
+            GeocodingRootDto resultDto = await ParseJsonAsync<GeocodingRootDto>(responseMessage).ConfigureAwait(false);
 
             if (resultDto.Status != GeocodingStatusDto.OK || resultDto.HasError || resultDto.Results == null || !resultDto.Results.Any())
             {
