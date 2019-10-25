@@ -16,7 +16,7 @@ namespace Epinova.GoogleGeocodingTests
             return _callCount;
         }
 
-        public void SendAsyncReturns(HttpResponseMessage result)
+        public void GetAsyncReturns(HttpResponseMessage result)
         {
             _expectedResponse = result;
         }
@@ -26,7 +26,7 @@ namespace Epinova.GoogleGeocodingTests
             _expectedException = exception;
         }
 
-        public void GetAsyncReturns(HttpResponseMessage result)
+        public void SendAsyncReturns(HttpResponseMessage result)
         {
             _expectedResponse = result;
         }

@@ -34,7 +34,7 @@ namespace Epinova.GoogleGeocoding
             var parameters = new SortedDictionary<string, string>
             {
                 { "address", address },
-                { "region", region},
+                { "region", region },
                 { "key", apiKey },
             };
             string url = $"?{BuildQueryString(parameters)}";

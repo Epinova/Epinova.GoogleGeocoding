@@ -22,12 +22,8 @@ namespace Epinova.GoogleGeocodingTests
             Assert.False(dto.HasError);
         }
 
-        #region Nested type: TestableResponseDtoBase
-
         private class TestableResponseDtoBase : ResponseDtoBase
         {
         }
-
-        #endregion
     }
 }

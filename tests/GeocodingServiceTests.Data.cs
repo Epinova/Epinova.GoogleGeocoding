@@ -2,6 +2,16 @@
 {
     partial class GeocodingServiceTests
     {
+        public static string GetInvaldResult()
+        {
+            return @"{
+   ""error_message"" : ""This API project is not authorized to use this API."",
+   ""results"" : [],
+   ""status"" : ""REQUEST_DENIED""
+}
+";
+        }
+
         private static string GetValidPostalCodeResult()
         {
             return @"{
@@ -69,16 +79,6 @@
             ""status"" : ""OK""
         }
         ";
-        }
-
-        public static string GetInvaldResult()
-        {
-            return @"{
-   ""error_message"" : ""This API project is not authorized to use this API."",
-   ""results"" : [],
-   ""status"" : ""REQUEST_DENIED""
-}
-";
         }
     }
 }

@@ -25,6 +25,18 @@ namespace Epinova.GoogleGeocodingTests
             _service = new GeocodingService(_logMock.Object, mapperConfiguration.CreateMapper());
         }
 
+        [Fact]
+        public async Task GetGeocodingInfo_DtoStatusNotOk_ReturnsNull()
+        {
+            _messageHandler.SendAsyncReturns(new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(GetInvaldResult())
+            });
+            GeocodingInfo result = await _service.GetGeocodingInfoAsync(Factory.GetString(), Factory.GetString(), "no");
+
+            Assert.Null(result);
+        }
+
 
         [Fact]
         public async Task GetGeocodingInfo_InternalServerError_ReturnsNull()
@@ -81,18 +93,6 @@ namespace Epinova.GoogleGeocodingTests
             GeocodingInfo result = await _service.GetGeocodingInfoAsync(Factory.GetString(), Factory.GetString(), "no");
 
             Assert.IsType<GeocodingInfo>(result);
-        }
-
-        [Fact]
-        public async Task GetGeocodingInfo_DtoStatusNotOk_ReturnsNull()
-        {
-            _messageHandler.SendAsyncReturns(new HttpResponseMessage(HttpStatusCode.OK)
-            {
-                Content = new StringContent(GetInvaldResult())
-            });
-            GeocodingInfo result = await _service.GetGeocodingInfoAsync(Factory.GetString(), Factory.GetString(), "no");
-
-            Assert.Null(result);
         }
 
         [Fact]
