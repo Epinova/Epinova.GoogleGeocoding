@@ -17,6 +17,11 @@ namespace Epinova.GoogleGeocoding
         private readonly ILogger _log;
         private readonly IMapper _mapper;
 
+        static GeocodingService()
+        {
+            Client.DefaultRequestHeaders.Add("Accept-Language", "nb-NO,nb;q=0.9");
+            Client.DefaultRequestHeaders.Add("Accept-Language", "en-US;q=0.6");
+        }
 
         public GeocodingService(ILogger log, IMapper mapper) : base(log)
         {
